@@ -1,4 +1,6 @@
-react-custom-scrollbars
+> fork from https://github.com/malte-wessel/react-custom-scrollbars and fix init width and height error
+
+react-custom-scrollbars-better
 =========================
 
 [![npm](https://img.shields.io/badge/npm-react--custom--scrollbars-brightgreen.svg?style=flat-square)]()
