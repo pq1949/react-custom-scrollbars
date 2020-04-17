@@ -70,6 +70,7 @@ export default class Scrollbars extends Component {
         this.state = {
             didMountUniversal: false
         };
+        this.rtl = document.dir === 'rtl';
     }
 
     componentDidMount() {
@@ -482,6 +483,8 @@ export default class Scrollbars extends Component {
         callback(values);
     }
 
+    checkRtl = () => (this.props.rtl !== void 0 ? this.props.rtl : this.rtl)
+
     render() {
         const scrollbarWidth = getScrollbarWidth();
         /* eslint-disable no-unused-vars */
@@ -509,11 +512,10 @@ export default class Scrollbars extends Component {
             autoHeightMax,
             style,
             children,
-            rtl,
             ...props
         } = this.props;
         /* eslint-enable no-unused-vars */
-
+        const RTL = this.checkRtl();
         const { didMountUniversal } = this.state;
 
         const containerStyle = {
@@ -529,7 +531,7 @@ export default class Scrollbars extends Component {
         const viewStyle = {
             ...viewStyleDefault,
             // Hide scrollbars by setting a negative margin
-            ...(rtl ?
+            ...(RTL ?
                 { marginLeft: scrollbarWidth ? -scrollbarWidth : 0 } :
                 { marginRight: scrollbarWidth ? -scrollbarWidth : 0 }
             ),
@@ -589,7 +591,7 @@ export default class Scrollbars extends Component {
                 )
             ),
             cloneElement(
-                renderTrackVertical({ style: trackVerticalStyle }),
+                renderTrackVertical({ style: trackVerticalStyle, rtl: RTL }),
                 { key: 'trackVertical', ref: (ref) => { this.trackVertical = ref; } },
                 cloneElement(
                     renderThumbVertical({ style: thumbVerticalStyleDefault }),

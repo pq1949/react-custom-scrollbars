@@ -39,7 +39,7 @@
 * `autoHeightMax`: (Number) Set a maximum height for auto-height mode (default: 200)
 * `universal`: (Boolean) Enable universal rendering (default: `false`)
     * [Learn how to use universal rendering](#link)
-* `rtl`: (Boolean) Support rtl language (default: `false`)
+* `rtl`: (Boolean) Support rtl language (default: use `document.dir === 'rtl'`)
 
 ### Methods
 

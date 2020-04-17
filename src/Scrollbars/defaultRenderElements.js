@@ -16,8 +16,15 @@ export function renderTrackHorizontalDefault({ style, ...props }) {
     return <div style={finalStyle} {...props} />;
 }
 
-export function renderTrackVerticalDefault({ style, ...props }) {
-    const finalStyle = {
+export function renderTrackVerticalDefault({ style, rtl, ...props }) {
+    const finalStyle = rtl ? {
+        ...style,
+        left: 2,
+        bottom: 2,
+        top: 2,
+        borderRadius: 3
+      } :
+      {
         ...style,
         right: 2,
         bottom: 2,
