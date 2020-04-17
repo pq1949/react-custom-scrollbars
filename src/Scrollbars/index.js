@@ -552,7 +552,7 @@ export default class Scrollbars extends Component {
                 maxHeight: autoHeightMax
             }),
             // Override
-            ...((universal && !didMountUniversal) && (rtl ? viewStyleRtlUniversalInitial : viewStyleUniversalInitial))
+            ...((universal && !didMountUniversal) && (RTL ? viewStyleRtlUniversalInitial : viewStyleUniversalInitial))
         };
 
         const trackAutoHeightStyle = {
