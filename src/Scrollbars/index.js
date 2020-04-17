@@ -529,9 +529,9 @@ export default class Scrollbars extends Component {
         const viewStyle = {
             ...viewStyleDefault,
             // Hide scrollbars by setting a negative margin
-            ...(rtl ? 
-                {marginLeft: scrollbarWidth ? -scrollbarWidth : 0} :
-                {marginRight: scrollbarWidth ? -scrollbarWidth : 0}
+            ...(rtl ?
+                { marginLeft: scrollbarWidth ? -scrollbarWidth : 0 } :
+                { marginRight: scrollbarWidth ? -scrollbarWidth : 0 }
             ),
             marginBottom: scrollbarWidth ? -scrollbarWidth : 0,
             ...(autoHeight && {
@@ -630,6 +630,7 @@ Scrollbars.propTypes = {
     universal: PropTypes.bool,
     style: PropTypes.object,
     children: PropTypes.node,
+    rtl: PropTypes.bool
 };
 
 Scrollbars.defaultProps = {

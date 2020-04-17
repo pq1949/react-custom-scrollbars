@@ -1,4 +1,6 @@
-> fork from https://github.com/malte-wessel/react-custom-scrollbars and fix init width and height error
+> fork from https://github.com/malte-wessel/react-custom-scrollbars
+> fix 1.init width and height error
+> feat 1. support rtl
 
 react-custom-scrollbars-better
 =========================
