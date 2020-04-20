@@ -448,6 +448,7 @@ export default class Scrollbars extends Component {
     _update(callback) {
         const { onUpdate, hideTracksWhenNotNeeded } = this.props;
         const values = this.getValues();
+        const RTL = this.checkRtl();
         if (getScrollbarWidth()) {
             const { scrollLeft, clientWidth, scrollWidth } = values;
             const trackHorizontalWidth = getInnerWidth(this.trackHorizontal);
@@ -455,7 +456,7 @@ export default class Scrollbars extends Component {
             const thumbHorizontalX = scrollLeft / (scrollWidth - clientWidth) * (trackHorizontalWidth - thumbHorizontalWidth);
             const thumbHorizontalStyle = {
                 width: thumbHorizontalWidth || 0,
-                transform: `translateX(${thumbHorizontalX}px)`
+                transform: `translateX(${RTL ? -thumbHorizontalX : thumbHorizontalX}px)`
             };
             const { scrollTop, clientHeight, scrollHeight } = values;
             const trackVerticalHeight = getInnerHeight(this.trackVertical);
