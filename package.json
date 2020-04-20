@@ -1,6 +1,6 @@
 {
   "name": "react-custom-scrollbars-better",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React scrollbars component(fix init width and height error)",
   "main": "lib/index.js",
   "scripts": {

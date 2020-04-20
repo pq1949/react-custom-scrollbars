@@ -43,7 +43,8 @@ export const viewStyleRtlUniversalInitial = {
 
 export const trackHorizontalStyleDefault = {
     position: 'absolute',
-    height: 6
+    height: 6,
+    direction: 'ltr'
 };
 
 export const trackVerticalStyleDefault = {
